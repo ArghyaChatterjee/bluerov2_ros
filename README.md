@@ -29,29 +29,23 @@ Install these additional packages:
 sudo apt install ros-melodic-imu-tools ros-melodic-robot-localization
 ~~~~
 
-Create a catkin workspace:
+Create a catkin workspace and install orca:
 ~~~~
 source /opt/ros/melodic/setup.bash
 mkdir -p ~/orca_catkin_ws/src
-cd ~/orca_catkin_ws/
-catkin_make
-source devel/setup.bash
-~~~~
-
-Download and compile Orca:
-~~~~
 cd ~/orca_catkin_ws/src
 git clone https://github.com/clydemcqueen/orca.git
 cd ..
 catkin_make
+source devel/setup.bash
 ~~~~
 
-Run the simulation:
+Attach the joystick and run the simulation:
 ~~~~
 roslaunch orca_gazebo gazebo.launch --screen
 ~~~~
 
-Plug in your gamepad, hit the [menu button](https://support.xbox.com/en-US/xbox-one/accessories/xbox-one-wireless-controller) to arm the thrusters and start driving around. Here's how the buttons are mapped:
+For manual control, plug in your gamepad, hit the [menu button](https://support.xbox.com/en-US/xbox-one/accessories/xbox-one-wireless-controller) to arm the thrusters and start driving around. Here's how the buttons are mapped:
 * Left stick up/down is forward/reverse
 * Left stick left/right is yaw left/right
 * Right stick up/down is ascend/descend
@@ -63,6 +57,10 @@ Plug in your gamepad, hit the [menu button](https://support.xbox.com/en-US/xbox-
 * B button: hold depth
 * Y button: hold heading and depth
 
+For Automatic Control, Try the 2D Nav Goal button from builtin Rviz panel. You can also publish goal to the /move_base_simple/goal topic like this:
+```
+rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "{header: {frame_id: 'odom'}, pose: {position: {x: 0.5, y: 0.5, z: 2.5}, orientation: {x: 0.5, y: 0.5, z: 0.5, w: 1.0}}}"
+```
 ## Design
 
 I considered 3 ways to ROSify a BlueROV2:
