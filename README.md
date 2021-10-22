@@ -16,6 +16,10 @@ It does not use the Pixhawk controller that comes with the BlueROV2, and does no
 * [PhidgetSpatial Precision 3/3/3 High Resolution IMU](https://www.phidgets.com/?tier=3&catid=10&pcid=8&prodid=32)
 * Xbox One gamepad
 
+## Tested Software
+
+* Tested with Ubuntu 18.04 and ROS Melodic
+
 ## Simulation
 
 Orca runs in [Gazebo](http://gazebosim.org/), a SITL (software-in-the-loop) simulator.
