@@ -20,6 +20,11 @@ It does not use the Pixhawk controller that comes with the BlueROV2, and does no
 
 * Tested with Ubuntu 18.04 and ROS Melodic
 
+## Simulation Demonstration
+Here is a short demonstration. For better quality, see the demo on [youtube](https://www.youtube.com/watch?v=whqWEsKmHw8). 
+<p align="center">
+    <img src="Blue_ROV2.gif", width="800">
+</p>
 ## Simulation
 
 Orca runs in [Gazebo](http://gazebosim.org/), a SITL (software-in-the-loop) simulator.
