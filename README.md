@@ -25,6 +25,7 @@ Here is a short demonstration. For better quality, see the demo on [youtube](htt
 <p align="center">
     <img src="Blue_ROV2.gif", width="800">
 </p>
+
 ## Simulation
 
 Orca runs in [Gazebo](http://gazebosim.org/), a SITL (software-in-the-loop) simulator.
@@ -47,7 +48,7 @@ Create a catkin workspace and install orca:
 source /opt/ros/melodic/setup.bash
 mkdir -p ~/orca_catkin_ws/src
 cd ~/orca_catkin_ws/src
-git clone https://github.com/clydemcqueen/orca.git
+git clone https://github.com/ArghyaChatterjee/orca.git
 cd ..
 catkin_make
 source devel/setup.bash
