@@ -48,8 +48,11 @@ Attach the joystick and run the simulation:
 ~~~~
 roslaunch orca_gazebo gazebo.launch --screen
 ~~~~
+### Start Simulation
+Click the `play` button inside Gazebo simulator to start the simulation. You will be able to see the ROV started to publish the transforms and robot model inside Rviz.
 
-For manual control, plug in your gamepad, hit the [menu button](https://support.xbox.com/en-US/xbox-one/accessories/xbox-one-wireless-controller) to arm the thrusters and start driving around. Here's how the buttons are mapped:
+### Manual Control
+For manual control, plug in your gamepad, hit the [menu button](https://support.xbox.com/en-US/xbox-one/accessories/xbox-one-wireless-controller) (in my case, it's Right Back, RB) to arm the thrusters and start driving around. It's important to map the keys if you are using different joystick. Here's how the buttons are mapped:
 * Left stick up/down is forward/reverse
 * Left stick left/right is yaw left/right
 * Right stick up/down is ascend/descend
@@ -61,13 +64,14 @@ For manual control, plug in your gamepad, hit the [menu button](https://support.
 * B button: hold depth
 * Y button: hold heading and depth
 
-For Automatic Control, Try the 2D Nav Goal button from builtin Rviz panel. You can also publish goal to the `/move_base_simple/goal` topic like this:
+### Automatic Control
+For Automatic Control, Try the 2D Nav Goal button from builtin Rviz panel. You can also publish goal to the `/move_base_simple/goal` topic. Open a new terminal and publish `geometry_msgs/PoseStamped` message like this:
 ```
 rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "{header: {frame_id: 'odom'}, pose: {position: {x: 0.5, y: 0.5, z: 2.5}, orientation: {x: 0.5, y: 0.5, z: 0.5, w: 1.0}}}"
 ```
 ## Design
 
-I considered 3 ways to ROSify a BlueROV2:
+3 ways has been considered to ROSify a BlueROV2:
 
 * Use the existing hardware (Pixhawk) and software (ArduSub), and use [mavros](http://wiki.ros.org/mavros) to move messages from the MAV message bus to/from ROS.
 See [BlueRov-ROS-playground](https://github.com/patrickelectric/bluerov_ros_playground) for a good example of this method.
