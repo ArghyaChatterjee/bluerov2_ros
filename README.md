@@ -26,7 +26,11 @@ Select `ros-melodic-desktop-full`; this will install Gazebo 9 as well.
 
 Install these additional packages:
 ~~~~
+sudo apt-get update
 sudo apt install ros-melodic-imu-tools ros-melodic-robot-localization
+sudo apt-get install -y ros-melodic-gscam
+sudo apt-get install -y gstreamer1.0-tools libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev
+sudo apt-get install -y libqt5gstreamer-dev
 ~~~~
 
 Create a catkin workspace and install orca:
@@ -57,7 +61,7 @@ For manual control, plug in your gamepad, hit the [menu button](https://support.
 * B button: hold depth
 * Y button: hold heading and depth
 
-For Automatic Control, Try the 2D Nav Goal button from builtin Rviz panel. You can also publish goal to the /move_base_simple/goal topic like this:
+For Automatic Control, Try the 2D Nav Goal button from builtin Rviz panel. You can also publish goal to the `/move_base_simple/goal` topic like this:
 ```
 rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "{header: {frame_id: 'odom'}, pose: {position: {x: 0.5, y: 0.5, z: 2.5}, orientation: {x: 0.5, y: 0.5, z: 0.5, w: 1.0}}}"
 ```
