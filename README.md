@@ -1,4 +1,4 @@
-# Orca #
+# BlueROV2 ROS
 
 Orca is a [ROS](http://ros.org) driver for [BlueRobotics BlueROV2](https://www.bluerobotics.com/store/rov/bluerov2/).
 Version 0.1.0  supports basic ROV functions.
